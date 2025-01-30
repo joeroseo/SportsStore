@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+ <meta name="viewport" content="width=device-width" />
+ <link rel="stylesheet" asp-href-include="lib/bootstrap/dist/css/*.min.css" />
+ <link rel="stylesheet" asp-href-include="lib/font-awesome/css/*.css" />
+ <title>SportsStore</title>
+</head>
+<body>
+ <nav class="navbar navbar-inverse bg-info justify-content-between">
+ <a class="navbar-brand text-white" href="#">SPORTS STORE</a>
+ <div class="float-right">
+ @await Component.InvokeAsync("CartSummary")
+ </div>
+ </nav>
+ <div class="container">
+ <div class="row">
+ <div class="col col-md-3">
+ @await Component.InvokeAsync("NavigationMenu")
+ </div>
+ <div class="col col-md-9">
+ @RenderBody()
+ </div>
+ </div>
+ </div>
+</body>
+</html>
